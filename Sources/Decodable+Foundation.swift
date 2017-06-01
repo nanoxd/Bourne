@@ -10,3 +10,12 @@ extension String: Decodable {
     }
 }
 
+extension Int: Decodable {
+    public static func decode(_ json: JSON?) throws -> Int {
+        guard let value = json?.int else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to Int")
+        }
+
+        return value
+    }
+}

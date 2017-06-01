@@ -6,15 +6,23 @@ public struct JSON {
     public init() {
         self.object = nil
     }
-    
+
+    /// Initializes an instance with Any object
+    ///
+    /// - Parameter object: Any
     public init(_ object: Any?) {
         self.object = object
     }
-    
+
+
+
+    /// Initializes an instance with another JSON object
+    ///
+    /// - Parameter json: A JSON object
     public init(json: JSON) {
         self.object = json.object
     }
-    
+
     public init?(data: Data?) {
         guard let data = data else {
             return nil
@@ -27,7 +35,7 @@ public struct JSON {
             debugPrint(error)
         }
     }
-    
+
     public init?(path: String) {
         guard FileManager.default.fileExists(atPath: path) else {
             return nil
@@ -49,7 +57,7 @@ public struct JSON {
         
         self.init(bundle: bundle, filename: filename)
     }
-    
+
     public init?(bundle: Bundle, filename: String) {
         guard let filePath = bundle.path(forResource: filename, ofType: nil) else {
             return nil
@@ -102,6 +110,31 @@ extension JSON {
             value = (object as? NSDecimalNumber)?.stringValue
         case is NSNumber:
             value = (object as? NSNumber)?.stringValue
+        default:
+            break
+        }
+        
+        return value
+    }
+}
+
+// MARK: - Int
+extension JSON {
+    public var int: Int? {
+        guard let object = object else {
+            return nil
+        }
+        
+        var value: Int? = nil
+        
+        switch object {
+        case is NSNumber:
+            value = (object as? NSNumber)?.intValue
+        case is String:
+            let stringValue = object as? String
+            if let stringValue = stringValue {
+                value = NSDecimalNumber(string: stringValue).intValue
+            }
         default:
             break
         }
