@@ -3,6 +3,12 @@ import XCTest
 import Bourne
 
 class BourneTests: XCTestCase {
+    func testEmptyInitializer() {
+        let json = JSON()
+
+        XCTAssertNil(json.object)
+    }
+    
     func testDataInitializer() {
         let data = "\"people\"".data(using: String.Encoding.utf8)
         let json = JSON(data: data)
@@ -15,6 +21,7 @@ class BourneTests: XCTestCase {
     }
     
     static var allTests = [
+        ("testEmptyInitializer", testEmptyInitializer),
         ("testDataInitializer", testDataInitializer),
     ]
 }
