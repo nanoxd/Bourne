@@ -1,23 +1,20 @@
-//
-//  BourneTests.swift
-//  Bourne
-//
-//  Created by Fernando Paredes on {TODAY}.
-//  Copyright © 2017 Bourne. All rights reserved.
-//
-
 import Foundation
 import XCTest
 import Bourne
 
 class BourneTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(Bourne().text, "Hello, World!")
+    func testDataInitializer() {
+        let data = "\"people\"".data(using: String.Encoding.utf8)
+        let json = JSON(data: data)
+
+        XCTAssertNotNil(json)
+        XCTAssertEqual(json?.string, "people")
+
+        let emptyDataJSON = JSON(data: nil)
+        XCTAssertNil(emptyDataJSON)
     }
     
     static var allTests = [
-        ("testExample", testExample),
+        ("testDataInitializer", testDataInitializer),
     ]
 }
