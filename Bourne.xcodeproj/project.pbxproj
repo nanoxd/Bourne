@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C731FA81ED4E6150047B818 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C731FA71ED4E6150047B818 /* Decodable.swift */; };
+		4C731FAC1ED4E6AD0047B818 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C731FAB1ED4E6AD0047B818 /* JSON.swift */; };
 		4C731FAE1ED4E6C70047B818 /* JSONType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C731FAD1ED4E6C70047B818 /* JSONType.swift */; };
 		4C731FB01ED4E8620047B818 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C731FAF1ED4E8620047B818 /* JSONError.swift */; };
 		52D6D9871BEFF229002C0205 /* Bourne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Bourne.framework */; };
@@ -480,6 +481,7 @@
 				4C731FAE1ED4E6C70047B818 /* JSONType.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* Bourne.swift in Sources */,
 				4C731FA81ED4E6150047B818 /* Decodable.swift in Sources */,
+				4C731FAC1ED4E6AD0047B818 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
