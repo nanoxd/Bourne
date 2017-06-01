@@ -8,6 +8,13 @@ class BourneTests: XCTestCase {
 
         XCTAssertNil(json.object)
     }
+
+    func testJSONInitalizer() {
+        let json = JSON("hey")
+        let otherJSON = JSON(json: json)
+
+        XCTAssertEqual(otherJSON, json)
+    }
     
     func testDataInitializer() {
         let data = "\"people\"".data(using: String.Encoding.utf8)
