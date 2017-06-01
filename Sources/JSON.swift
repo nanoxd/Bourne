@@ -86,6 +86,8 @@ public struct JSON {
     }
 }
 
+// MARK: - JSON+String
+
 extension JSON {
     public var string: String? {
         guard let object = object else {
