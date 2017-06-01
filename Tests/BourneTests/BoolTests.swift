@@ -32,6 +32,11 @@ class BoolTests: XCTestCase {
         XCTAssertNil(JSON("nothing").bool)
     }
 
+    func testBoolThrow() throws {
+        let json = JSON([1])
+        XCTAssertThrowsError(try Bool.decode(json))
+    }
+
     static var allTests = [
         ("testBoolDecoding", testBoolDecoding),
         ("testBoolIntDecoding", testBoolIntDecoding),

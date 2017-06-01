@@ -19,3 +19,13 @@ extension Int: Decodable {
         return value
     }
 }
+
+extension Bool: Decodable {
+    public static func decode(_ json: JSON?) throws -> Bool {
+        guard let value = json?.bool else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to Bool")
+        }
+
+        return value
+    }
+}
