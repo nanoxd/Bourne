@@ -10,7 +10,7 @@ extension JSON {
         return array.map { JSON($0) }
     }
 
-    // The contents of the current object or an empty array
+    /// The contents of the current object or an empty array
     public var arrayValue: [JSON] {
         return array ?? []
     }
