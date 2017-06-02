@@ -26,9 +26,26 @@ class BourneTests: XCTestCase {
         let emptyDataJSON = JSON(data: nil)
         XCTAssertNil(emptyDataJSON)
     }
+
+    func testFileManagerInitializer() {
+        XCTAssertNil(JSON(path: ""))
+
+        let testBundle = Bundle(for: BourneTests.self)
+        let filePath = testBundle.path(forResource: "some.json", ofType: nil)!
+
+        guard let file = JSON(path: filePath) else {
+            XCTFail("Could not find test file")
+            return
+        }
+
+        XCTAssertEqual(file["person"]?["id"]?.int, 1)
+    }
+
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
+        ("testJSONInitializer", testJSONInitalizer),
         ("testDataInitializer", testDataInitializer),
+        ("testFileManagerInitializer", testFileManagerInitializer),
     ]
 }

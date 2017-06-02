@@ -71,6 +71,9 @@
 		4CD4755B1EE1C13D001A71ED /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */; };
 		4CD4755C1EE1C13D001A71ED /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */; };
 		4CD4755D1EE1C13D001A71ED /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */; };
+		4CD475601EE1DF54001A71ED /* some.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4755E1EE1DDA2001A71ED /* some.json */; };
+		4CD475611EE1DF54001A71ED /* some.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4755E1EE1DDA2001A71ED /* some.json */; };
+		4CD475621EE1DF55001A71ED /* some.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CD4755E1EE1DDA2001A71ED /* some.json */; };
 		52D6D9871BEFF229002C0205 /* Bourne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Bourne.framework */; };
 		8933C7851EB5B820000D00A4 /* Bourne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* Bourne.swift */; };
 		8933C7861EB5B820000D00A4 /* Bourne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* Bourne.swift */; };
@@ -125,6 +128,7 @@
 		4CD475501EE1B7ED001A71ED /* JSON+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Double.swift"; path = "JSON/JSON+Double.swift"; sourceTree = "<group>"; };
 		4CD475551EE1C0B4001A71ED /* JSON+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Array.swift"; path = "JSON/JSON+Array.swift"; sourceTree = "<group>"; };
 		4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
+		4CD4755E1EE1DDA2001A71ED /* some.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = some.json; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Bourne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bourne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* Bourne-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bourne-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* Bourne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bourne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +268,7 @@
 				4C68A7F11EE08E4C002382EB /* NumberTests.swift */,
 				4C68A7F81EE0AD1D002382EB /* BoolTests.swift */,
 				4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */,
+				4CD4755E1EE1DDA2001A71ED /* some.json */,
 			);
 			name = Tests;
 			path = Tests/BourneTests;
@@ -520,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD475601EE1DF54001A71ED /* some.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +554,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD475611EE1DF54001A71ED /* some.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +562,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD475621EE1DF55001A71ED /* some.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
