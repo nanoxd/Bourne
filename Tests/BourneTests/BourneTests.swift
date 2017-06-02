@@ -73,6 +73,13 @@ class BourneTests: XCTestCase {
         let notADict = JSON(1)
         XCTAssertNil(notADict["key"])
     }
+
+    func testEquality() {
+        let json = JSON()
+        let otherJson = JSON(1)
+
+        XCTAssertNotEqual(json, otherJson)
+    }
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
@@ -82,5 +89,6 @@ class BourneTests: XCTestCase {
         ("testBundleClassInitializer", testBundleClassInitializer),
         ("testBundleInitializer", testBundleInitializer),
         ("testSubscript", testSubscript),
+        ("testEquality", testEquality),
     ]
 }
