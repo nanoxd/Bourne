@@ -1,7 +1,11 @@
 language: swift
 osx_image: xcode8.3
 xcode_project: Bourne.xcodeproj
-xcode_scheme: 
-  - Bourne-iOS Tests
-  - Bourne-tvOS Tests
-  - Bourne-macOS Tests
+matrix:
+  include:
+    - xcode_scheme: Bourne-iOS Tests
+      xcode_sdk: iphonesimulator10.3
+    - xcode_scheme: Bourne-macOS Tests
+      xcode_sdk: macosx10.12
+    - xcode_scheme: Bourne-tvOS Tests
+      xcode_sdk: appletvsimulator10.2
