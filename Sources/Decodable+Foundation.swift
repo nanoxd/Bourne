@@ -39,3 +39,13 @@ extension Bool: Decodable {
         return value
     }
 }
+
+extension Array where Element: Decodable {
+    public static func decode(_ json: JSON?) throws -> [Element] {
+        guard let items = json?.array else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to Array")
+        }
+
+        return try items.map { try Element.decode($0) }
+    }
+}

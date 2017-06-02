@@ -18,6 +18,26 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(notAnArray.arrayValue, [])
     }
 
+    func testArrayExtensionThrows() throws {
+        let notAnArray = JSON(1)
+
+        XCTAssertThrowsError(try [Int].decode(notAnArray))
+    }
+
+    func testArrayExtension() throws {
+        let array = [1, 2, 3]
+        let json = JSON(array)
+
+        let anotherArray = Array(1...10000)
+        let anotherJson = JSON(anotherArray)
+
+        let numbers = try! [Int].decode(json)
+        XCTAssertEqual(numbers, array)
+        
+        let moreNumbers = try! [Int].decode(anotherJson)
+        XCTAssertEqual(moreNumbers, anotherArray)
+    }
+
     static var allTests = [
         ("testArrayDecoding", testArrayDecoding),
         ("testInvalidArrayDecoding", testInvalidArrayDecoding),
