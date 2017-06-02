@@ -37,9 +37,18 @@ class BoolTests: XCTestCase {
         XCTAssertThrowsError(try Bool.decode(json))
     }
 
+    func testBoolEquality() {
+        let trueJson = JSON(true)
+        let falseJson = JSON(false)
+
+        XCTAssertEqual(trueJson, JSON(true))
+        XCTAssertNotEqual(trueJson, falseJson)
+    }
+
     static var allTests = [
         ("testBoolDecoding", testBoolDecoding),
         ("testBoolIntDecoding", testBoolIntDecoding),
         ("testBoolStringDecoding", testBoolStringDecoding),
+        ("testBoolEquality", testBoolEquality),
     ]
 }
