@@ -1,0 +1,54 @@
+fastlane_version "2.16.0"
+
+default_platform :ios
+
+PROJECT = "Bourne"
+
+platform :ios do
+  desc "Builds the framework and runs all the tests"
+  lane :test do
+    # Prevent timeout issues
+    ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+
+    # Just build the watchOS target (no tests)
+    xcodebuild(
+    project: "#{PROJECT}.xcodeproj",
+    scheme: "#{PROJECT}-watchOS",
+    clean: true,
+    build: true
+    )
+
+    # Build and test the macOS target
+    scan(
+    project: "#{PROJECT}.xcodeproj",
+    scheme: "#{PROJECT}-macOS",
+    devices: [
+      # (deliberately empty, will use the mac this is running on)
+    ],
+    clean: true,
+    skip_slack: true
+    )
+
+    # Build and test the iOS target
+    scan(
+    project: "#{PROJECT}.xcodeproj",
+    scheme: "#{PROJECT}-iOS",
+    devices: [
+      "iPhone SE",
+    ],
+    clean: true,
+    skip_slack: true
+    )
+
+    # Build and test the tvOS target
+    scan(
+    project: "#{PROJECT}.xcodeproj",
+    scheme: "#{PROJECT}-tvOS",
+    devices: [
+      "Apple TV 1080p",
+    ],
+    clean: true,
+    skip_slack: true
+    )
+  end
+end
