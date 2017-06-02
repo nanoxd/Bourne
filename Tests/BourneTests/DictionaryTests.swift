@@ -29,8 +29,39 @@ class DictionaryTests: XCTestCase {
         XCTAssertEqual(json, otherJson)
     }
 
+    func testDictionaryExtensionThrows() throws {
+        XCTAssertThrowsError(try [String: String].decode(JSON()))
+        XCTAssertThrowsError(try [String: String].decode(JSON(1)))
+    }
+
+    func testDictionaryExtension() throws {
+        let dictJSON = JSON(dict)
+        let parsedDict = try [String: String].decode(dictJSON)
+
+        XCTAssertEqual(parsedDict["a"], "dog")
+        XCTAssertEqual(parsedDict.count, 2)
+    }
+
+    func testNSDictionaryExtensionThrows() throws {
+        XCTAssertThrowsError(try NSDictionary.decode(JSON()))
+        XCTAssertThrowsError(try NSDictionary.decode(JSON(1)))
+    }
+
+    func testNSDictionaryExtension() throws {
+        let dictJSON = JSON(dict)
+        let parsedDict = try NSDictionary.decode(dictJSON)
+
+        XCTAssertEqual(parsedDict.object(forKey: "a") as? String, "dog")
+        XCTAssertEqual(parsedDict.count, 2)
+    }
+
     static var allTests = [
         ("testDictionaryDecoding", testDictionaryDecoding),
+        ("testDictionaryValue", testDictionaryValue),
+        ("testDictionaryExtensionThrows", testDictionaryExtensionThrows),
+        ("testDictionaryExtension", testDictionaryExtension),
         ("testEquality", testEquality),
+        ("testNSDictionaryExtensionThrows", testNSDictionaryExtensionThrows),
+        ("testNSDictionaryExtension", testNSDictionaryExtension),
     ]
 }
