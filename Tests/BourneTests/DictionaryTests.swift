@@ -55,6 +55,14 @@ class DictionaryTests: XCTestCase {
         XCTAssertEqual(parsedDict.count, 2)
     }
 
+    func testDictionaryPairExtension() {
+        let pairs = [("key", "value")]
+        let dictFromPairs = Dictionary(pairs)
+
+        XCTAssertEqual(dictFromPairs.count, 1)
+        XCTAssertEqual(dictFromPairs["key"], "value")
+    }
+
     static var allTests = [
         ("testDictionaryDecoding", testDictionaryDecoding),
         ("testDictionaryValue", testDictionaryValue),
@@ -63,5 +71,6 @@ class DictionaryTests: XCTestCase {
         ("testEquality", testEquality),
         ("testNSDictionaryExtensionThrows", testNSDictionaryExtensionThrows),
         ("testNSDictionaryExtension", testNSDictionaryExtension),
+        ("testDictionaryPairExtension", testDictionaryPairExtension),
     ]
 }

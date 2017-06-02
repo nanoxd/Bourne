@@ -42,11 +42,20 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(json.url?.absoluteString, url)
     }
 
+    func testURLExtension() throws {
+        XCTAssertThrowsError(try URL.decode(JSON()))
+
+        let url = "https://google.com"
+        let decodedURL = try URL.decode(JSON(url))
+        XCTAssertEqual(decodedURL.absoluteString, url)
+    }
+
     static var allTests = [
         ("testStringThrow", testStringThrow),
         ("testStringDecoding", testStringDecoding),
         ("testStringDecodingNumbers", testStringDecodingNumbers),
         ("testNilString", testNilString),
         ("testURLDecoding", testURLDecoding),
+        ("testURLExtension", testURLExtension),
     ]
 }
