@@ -57,6 +57,22 @@ class BourneTests: XCTestCase {
         XCTAssertNotNil(validFile)
         XCTAssertEqual(validFile?["person"]?["id"]?.int, 1)
     }
+
+    func testSubscript() {
+        var json = JSON(["key": "value"])
+        XCTAssertEqual(json["key"]?.string, "value")
+
+        json["key"] = JSON("newValue")
+        XCTAssertEqual(json["key"]?.string, "newValue")
+
+        var emptyJson = JSON()
+        emptyJson["key"] = JSON("value")
+
+        XCTAssertEqual(emptyJson["key"]?.string, "value")
+
+        let notADict = JSON(1)
+        XCTAssertNil(notADict["key"])
+    }
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
@@ -65,5 +81,6 @@ class BourneTests: XCTestCase {
         ("testFileManagerInitializer", testFileManagerInitializer),
         ("testBundleClassInitializer", testBundleClassInitializer),
         ("testBundleInitializer", testBundleInitializer),
+        ("testSubscript", testSubscript),
     ]
 }
