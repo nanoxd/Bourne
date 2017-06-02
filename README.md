@@ -1,4 +1,5 @@
 # Bourne
+[![Build Status](https://travis-ci.org/nanoxd/Bourne.svg?branch=master)](https://travis-ci.org/nanoxd/Bourne)
 
 ## Usage
 
