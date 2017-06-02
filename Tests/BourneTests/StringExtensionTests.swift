@@ -34,10 +34,19 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual(JSON(anotherDecimal).string, String(describing: anotherDecimal))
     }
 
+    func testURLDecoding() {
+        let url = "https://google.com"
+        let json = JSON(url)
+
+        XCTAssertNotNil(json.url)
+        XCTAssertEqual(json.url?.absoluteString, url)
+    }
+
     static var allTests = [
         ("testStringThrow", testStringThrow),
         ("testStringDecoding", testStringDecoding),
         ("testStringDecodingNumbers", testStringDecodingNumbers),
-        ("testNilString", testNilString)
+        ("testNilString", testNilString),
+        ("testURLDecoding", testURLDecoding),
     ]
 }

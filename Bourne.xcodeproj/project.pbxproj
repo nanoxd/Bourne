@@ -81,6 +81,10 @@
 		4CD475691EE202DE001A71ED /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD475681EE202DE001A71ED /* DictionaryTests.swift */; };
 		4CD4756A1EE202DE001A71ED /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD475681EE202DE001A71ED /* DictionaryTests.swift */; };
 		4CD4756B1EE202DE001A71ED /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD475681EE202DE001A71ED /* DictionaryTests.swift */; };
+		4CD4756D1EE20F08001A71ED /* JSON+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4756C1EE20F08001A71ED /* JSON+URL.swift */; };
+		4CD4756E1EE20F08001A71ED /* JSON+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4756C1EE20F08001A71ED /* JSON+URL.swift */; };
+		4CD4756F1EE20F08001A71ED /* JSON+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4756C1EE20F08001A71ED /* JSON+URL.swift */; };
+		4CD475701EE20F08001A71ED /* JSON+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4756C1EE20F08001A71ED /* JSON+URL.swift */; };
 		52D6D9871BEFF229002C0205 /* Bourne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Bourne.framework */; };
 		8933C7851EB5B820000D00A4 /* Bourne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* Bourne.swift */; };
 		8933C7861EB5B820000D00A4 /* Bourne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* Bourne.swift */; };
@@ -138,6 +142,7 @@
 		4CD4755E1EE1DDA2001A71ED /* some.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = some.json; sourceTree = "<group>"; };
 		4CD475631EE1FEEA001A71ED /* JSON+Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Dictionary.swift"; path = "JSON/JSON+Dictionary.swift"; sourceTree = "<group>"; };
 		4CD475681EE202DE001A71ED /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		4CD4756C1EE20F08001A71ED /* JSON+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+URL.swift"; path = "JSON/JSON+URL.swift"; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* Bourne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bourne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* Bourne-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bourne-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* Bourne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bourne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +225,7 @@
 				4CD475501EE1B7ED001A71ED /* JSON+Double.swift */,
 				4CD475551EE1C0B4001A71ED /* JSON+Array.swift */,
 				4CD475631EE1FEEA001A71ED /* JSON+Dictionary.swift */,
+				4CD4756C1EE20F08001A71ED /* JSON+URL.swift */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C68A81B1EE0C25A002382EB /* JSON+Equatable.swift in Sources */,
+				4CD4756D1EE20F08001A71ED /* JSON+URL.swift in Sources */,
 				4CD475641EE1FEEA001A71ED /* JSON+Dictionary.swift in Sources */,
 				4C731FB01ED4E8620047B818 /* JSONError.swift in Sources */,
 				4C68A7F01EE0808A002382EB /* Dictionary+Pairs.swift in Sources */,
@@ -620,6 +627,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C68A8191EE0C258002382EB /* JSON+Equatable.swift in Sources */,
+				4CD4756F1EE20F08001A71ED /* JSON+URL.swift in Sources */,
 				4CD475661EE1FEEA001A71ED /* JSON+Dictionary.swift in Sources */,
 				4C68A8001EE0C19D002382EB /* DecodeError.swift in Sources */,
 				4C68A8121EE0C205002382EB /* Dictionary+Pairs.swift in Sources */,
@@ -642,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C68A8181EE0C258002382EB /* JSON+Equatable.swift in Sources */,
+				4CD475701EE20F08001A71ED /* JSON+URL.swift in Sources */,
 				4CD475671EE1FEEA001A71ED /* JSON+Dictionary.swift in Sources */,
 				4C68A8011EE0C19D002382EB /* DecodeError.swift in Sources */,
 				4C68A8131EE0C206002382EB /* Dictionary+Pairs.swift in Sources */,
@@ -664,6 +673,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C68A81A1EE0C259002382EB /* JSON+Equatable.swift in Sources */,
+				4CD4756E1EE20F08001A71ED /* JSON+URL.swift in Sources */,
 				4CD475651EE1FEEA001A71ED /* JSON+Dictionary.swift in Sources */,
 				4C68A7FF1EE0C19C002382EB /* DecodeError.swift in Sources */,
 				4C68A8111EE0C205002382EB /* Dictionary+Pairs.swift in Sources */,
