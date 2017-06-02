@@ -11,7 +11,15 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(json.array?.count, 1)
     }
 
+    func testInvalidArrayDecoding() {
+        let notAnArray = JSON(nil)
+
+        XCTAssertNil(notAnArray.array)
+        XCTAssertEqual(notAnArray.arrayValue, [])
+    }
+
     static var allTests = [
         ("testArrayDecoding", testArrayDecoding),
+        ("testInvalidArrayDecoding", testInvalidArrayDecoding),
     ]
 }
