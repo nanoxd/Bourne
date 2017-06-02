@@ -44,11 +44,21 @@ class NumberTests: XCTestCase {
         XCTAssertEqual(JSON(1).double, 1.0)
     }
 
+    func testInvalidDoubleDecoding() {
+        XCTAssertNil(JSON(nil).double)
+        XCTAssertNil(JSON([]).double)
+    }
+
     func testDoubleEquality() {
         let lhs = JSON(1.0)
         let rhs = JSON(1.0)
 
         XCTAssertEqual(lhs, rhs)
+
+        let morePrecision = JSON(1.12121212)
+        let andAgain = JSON(1.1212121)
+
+        XCTAssertNotEqual(morePrecision, andAgain)
     }
 
     static var allTests = [
@@ -57,5 +67,6 @@ class NumberTests: XCTestCase {
         ("testIntEquality", testIntEquality),
         ("testDoubleDecoding", testDoubleDecoding),
         ("testDoubleEquality", testDoubleEquality),
+        ("testInvalidDoubleDecoding", testInvalidDoubleDecoding),
     ]
 }
