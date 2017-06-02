@@ -41,5 +41,7 @@ class ArrayTests: XCTestCase {
     static var allTests = [
         ("testArrayDecoding", testArrayDecoding),
         ("testInvalidArrayDecoding", testInvalidArrayDecoding),
+        ("testArrayExtensionThrows", testArrayExtensionThrows),
+        ("testArrayExtension", testArrayExtension),
     ]
 }
