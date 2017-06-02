@@ -38,8 +38,20 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(moreNumbers, anotherArray)
     }
 
+    func testArrayEquality() throws {
+        let lhs = JSON([1, 2, 3])
+        let rhs = JSON([1, 2, 3])
+
+        XCTAssertEqual(lhs, rhs)
+        XCTAssertNotEqual(lhs, JSON([1, 2]))
+        XCTAssertNotEqual(lhs, JSON(1))
+    }
+
     static var allTests = [
         ("testArrayDecoding", testArrayDecoding),
         ("testInvalidArrayDecoding", testInvalidArrayDecoding),
+        ("testArrayExtensionThrows", testArrayExtensionThrows),
+        ("testArrayExtension", testArrayExtension),
+        ("testArrayEquality", testArrayEquality),
     ]
 }
