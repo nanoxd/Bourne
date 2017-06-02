@@ -30,6 +30,7 @@ class BoolTests: XCTestCase {
         XCTAssertEqual(falseJson.bool, false)
         
         XCTAssertNil(JSON("nothing").bool)
+        XCTAssertNil(JSON(nil).bool)
     }
 
     func testBoolThrow() throws {
