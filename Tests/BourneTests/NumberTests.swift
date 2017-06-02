@@ -35,9 +35,27 @@ class NumberTests: XCTestCase {
         XCTAssertNotEqual(stringOne, one)
     }
 
+    func testDoubleDecoding() {
+        let double = 1.211
+        let stringDouble = "1.211"
+
+        XCTAssertEqual(JSON(double).double, double)
+        XCTAssertEqual(JSON(stringDouble).double, double)
+        XCTAssertEqual(JSON(1).double, 1.0)
+    }
+
+    func testDoubleEquality() {
+        let lhs = JSON(1.0)
+        let rhs = JSON(1.0)
+
+        XCTAssertEqual(lhs, rhs)
+    }
+
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
         ("testIntEquality", testIntEquality),
+        ("testDoubleDecoding", testDoubleDecoding),
+        ("testDoubleEquality", testDoubleEquality),
     ]
 }
