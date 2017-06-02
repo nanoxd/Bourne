@@ -46,6 +46,17 @@ class BourneTests: XCTestCase {
 
         XCTAssertNotNil(json)
     }
+
+    func testBundleInitializer() {
+        let bundle = Bundle(for: BourneTests.self)
+        let invalidFile = JSON(bundle: bundle, filename: "not_here.json")
+
+        XCTAssertNil(invalidFile)
+
+        let validFile = JSON(bundle: bundle, filename: "some.json")
+        XCTAssertNotNil(validFile)
+        XCTAssertEqual(validFile?["person"]?["id"]?.int, 1)
+    }
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
@@ -53,5 +64,6 @@ class BourneTests: XCTestCase {
         ("testDataInitializer", testDataInitializer),
         ("testFileManagerInitializer", testFileManagerInitializer),
         ("testBundleClassInitializer", testBundleClassInitializer),
+        ("testBundleInitializer", testBundleInitializer),
     ]
 }
