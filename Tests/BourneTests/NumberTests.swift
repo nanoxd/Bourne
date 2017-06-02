@@ -61,12 +61,17 @@ class NumberTests: XCTestCase {
         XCTAssertNotEqual(morePrecision, andAgain)
     }
 
+    func testDoubleExtensionThrows() throws {
+        XCTAssertThrowsError(try Double.decode(JSON([])))
+    }
+
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
         ("testIntEquality", testIntEquality),
         ("testDoubleDecoding", testDoubleDecoding),
         ("testDoubleEquality", testDoubleEquality),
+        ("testDoubleExtensionThrows", testDoubleExtensionThrows),
         ("testInvalidDoubleDecoding", testInvalidDoubleDecoding),
     ]
 }
