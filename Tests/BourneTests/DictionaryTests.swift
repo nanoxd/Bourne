@@ -15,6 +15,13 @@ class DictionaryTests: XCTestCase {
         XCTAssertNil(notADict.dictionary)
     }
 
+    func testDictionaryValue() {
+        let json = JSON(dict)
+
+        XCTAssertEqual(json.dictionaryValue.count, 2)
+        XCTAssertEqual(JSON().dictionaryValue.count, 0)
+    }
+    
     func testEquality() {
         let json = JSON(dict)
         let otherJson = JSON(dict)
