@@ -65,12 +65,20 @@ class NumberTests: XCTestCase {
         XCTAssertThrowsError(try Double.decode(JSON([])))
     }
 
+    func testDoubleExtension() throws {
+        let json = JSON(1.21)
+        let double = try Double.decode(json)
+
+        XCTAssertEqual(double, 1.21)
+    }
+
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
         ("testIntEquality", testIntEquality),
         ("testDoubleDecoding", testDoubleDecoding),
         ("testDoubleEquality", testDoubleEquality),
+        ("testDoubleExtension", testDoubleExtension),
         ("testDoubleExtensionThrows", testDoubleExtensionThrows),
         ("testInvalidDoubleDecoding", testInvalidDoubleDecoding),
     ]
