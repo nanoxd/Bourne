@@ -40,6 +40,16 @@ extension Bool: Decodable {
     }
 }
 
+extension URL: Decodable {
+    public static func decode(_ json: JSON?) throws -> URL {
+        guard let value = json?.url else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to URL")
+        }
+
+        return value
+    }
+}
+
 extension Array where Element: Decodable {
     public static func decode(_ json: JSON?) throws -> [Element] {
         guard let items = json?.array else {
