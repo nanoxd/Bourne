@@ -14,7 +14,7 @@ extension JSON {
         case is String:
             let stringValue = object as? String
             if let stringValue = stringValue {
-                value = NSDecimalNumber(string: stringValue).intValue
+                value = Int(stringValue)
             }
         default:
             break
