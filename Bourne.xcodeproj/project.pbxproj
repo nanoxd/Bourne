@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E019E471EE24858005C29BE /* JSON+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E019E461EE24858005C29BE /* JSON+Float.swift */; };
+		3E019E481EE24858005C29BE /* JSON+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E019E461EE24858005C29BE /* JSON+Float.swift */; };
+		3E019E491EE24858005C29BE /* JSON+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E019E461EE24858005C29BE /* JSON+Float.swift */; };
+		3E019E4A1EE24858005C29BE /* JSON+Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E019E461EE24858005C29BE /* JSON+Float.swift */; };
 		4C68A7EA1EE065BF002382EB /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68A7E81EE064E9002382EB /* StringExtensionTests.swift */; };
 		4C68A7EB1EE065C0002382EB /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68A7E81EE064E9002382EB /* StringExtensionTests.swift */; };
 		4C68A7EC1EE065C0002382EB /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68A7E81EE064E9002382EB /* StringExtensionTests.swift */; };
@@ -126,6 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E019E461EE24858005C29BE /* JSON+Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Float.swift"; path = "JSON/JSON+Float.swift"; sourceTree = "<group>"; };
 		4C68A7E81EE064E9002382EB /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decodable+Foundation.swift"; sourceTree = "<group>"; };
 		4C68A7EF1EE0808A002382EB /* Dictionary+Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Pairs.swift"; sourceTree = "<group>"; };
@@ -232,6 +237,7 @@
 				4CD475631EE1FEEA001A71ED /* JSON+Dictionary.swift */,
 				4CD4756C1EE20F08001A71ED /* JSON+URL.swift */,
 				4CD475711EE2228F001A71ED /* JSON+UInt.swift */,
+				3E019E461EE24858005C29BE /* JSON+Float.swift */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -610,6 +616,7 @@
 				4CD475561EE1C0B4001A71ED /* JSON+Array.swift in Sources */,
 				4C731FAC1ED4E6AD0047B818 /* JSON.swift in Sources */,
 				4C68A7EE1EE0666E002382EB /* Decodable+Foundation.swift in Sources */,
+				3E019E471EE24858005C29BE /* JSON+Float.swift in Sources */,
 				4CD475511EE1B7ED001A71ED /* JSON+Double.swift in Sources */,
 				4CD475721EE2228F001A71ED /* JSON+UInt.swift in Sources */,
 				4C68A7F71EE0ABFF002382EB /* JSON+Bool.swift in Sources */,
@@ -647,6 +654,7 @@
 				4CD475581EE1C0B4001A71ED /* JSON+Array.swift in Sources */,
 				8933C7871EB5B820000D00A4 /* Bourne.swift in Sources */,
 				4C68A8031EE0C1A1002382EB /* Decodable+Foundation.swift in Sources */,
+				3E019E491EE24858005C29BE /* JSON+Float.swift in Sources */,
 				4CD475531EE1B7ED001A71ED /* JSON+Double.swift in Sources */,
 				4CD475741EE2228F001A71ED /* JSON+UInt.swift in Sources */,
 				4C68A7FD1EE0C199002382EB /* Decodable.swift in Sources */,
@@ -671,6 +679,7 @@
 				4CD475591EE1C0B4001A71ED /* JSON+Array.swift in Sources */,
 				8933C7881EB5B820000D00A4 /* Bourne.swift in Sources */,
 				4C68A8041EE0C1A2002382EB /* Decodable+Foundation.swift in Sources */,
+				3E019E4A1EE24858005C29BE /* JSON+Float.swift in Sources */,
 				4CD475541EE1B7ED001A71ED /* JSON+Double.swift in Sources */,
 				4CD475751EE2228F001A71ED /* JSON+UInt.swift in Sources */,
 				4C68A7FE1EE0C199002382EB /* Decodable.swift in Sources */,
@@ -695,6 +704,7 @@
 				4CD475571EE1C0B4001A71ED /* JSON+Array.swift in Sources */,
 				8933C7861EB5B820000D00A4 /* Bourne.swift in Sources */,
 				4C68A8021EE0C1A1002382EB /* Decodable+Foundation.swift in Sources */,
+				3E019E481EE24858005C29BE /* JSON+Float.swift in Sources */,
 				4CD475521EE1B7ED001A71ED /* JSON+Double.swift in Sources */,
 				4CD475731EE2228F001A71ED /* JSON+UInt.swift in Sources */,
 				4C68A7FC1EE0C198002382EB /* Decodable.swift in Sources */,
