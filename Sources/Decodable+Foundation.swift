@@ -30,6 +30,16 @@ extension UInt: Decodable {
     }
 }
 
+extension Float: Decodable {
+    public static func decode(_ json: JSON?) throws -> Float {
+        guard let value = json?.float else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to Float")
+        }
+
+        return value
+    }
+}
+
 extension Double: Decodable {
     public static func decode(_ json: JSON?) throws -> Double {
         guard let value = json?.double else {

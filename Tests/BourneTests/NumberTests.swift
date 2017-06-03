@@ -111,6 +111,13 @@ class NumberTests: XCTestCase {
         
         XCTAssertEqual(JSON(1).float, 1.0)
     }
+    
+    func testFloatExtension() throws {
+        XCTAssertThrowsError(try Float.decode(JSON()))
+        
+        let float: Float = 1.1
+        XCTAssertEqual(try Float.decode(JSON(float)), float)
+    }
 
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
@@ -124,5 +131,6 @@ class NumberTests: XCTestCase {
         ("testUIntDecoding", testUIntDecoding),
         ("testUIntExtension", testUIntExtension),
         ("testFloatDecoding", testFloatDecoding),
+        ("testFloatExtension", testFloatDecoding),
     ]
 }
