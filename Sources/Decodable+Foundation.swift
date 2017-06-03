@@ -20,6 +20,16 @@ extension Int: Decodable {
     }
 }
 
+extension UInt: Decodable {
+    public static func decode(_ json: JSON?) throws -> UInt {
+        guard let value = json?.uInt else {
+            throw DecodeError.undecodable("Could not convert \(String(describing: json)) to UInt")
+        }
+
+        return value
+    }
+}
+
 extension Double: Decodable {
     public static func decode(_ json: JSON?) throws -> Double {
         guard let value = json?.double else {
