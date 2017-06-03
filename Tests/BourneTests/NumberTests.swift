@@ -34,6 +34,30 @@ class NumberTests: XCTestCase {
         let stringOne = JSON("1")
         XCTAssertNotEqual(stringOne, one)
     }
+    
+    func testInt64Decoding() {
+        let int64 = Int64.max
+        XCTAssertEqual(JSON(int64).int64, int64)
+        
+        let stringInt64 = String(describing: int64)
+        XCTAssertEqual(JSON(stringInt64).int64, int64)
+        
+        XCTAssertNil(JSON().int64)
+        XCTAssertNil(JSON([]).int64)
+    }
+    
+    func testInt64Extension() throws {
+        let int64 = Int64.max
+        XCTAssertThrowsError(try Int64.decode(JSON()))
+        XCTAssertEqual(try Int64.decode(JSON(int64)), int64)
+    }
+    
+    func testInt64Equality() {
+        let lhs = JSON(Int64.max)
+        let rhs = JSON(Int64.max)
+        
+        XCTAssertEqual(lhs, rhs)
+    }
 
     func testDoubleDecoding() {
         let double = 1.211
@@ -72,14 +96,82 @@ class NumberTests: XCTestCase {
         XCTAssertEqual(double, 1.21)
     }
 
+    func testUIntDecoding() {
+        let uInt: UInt = 121
+        let uIntJson = JSON(uInt)
+
+        XCTAssertEqual(uIntJson.uInt, uInt)
+        
+        let negativeInt = -124
+        let negativeJson = JSON(negativeInt)
+        XCTAssertNil(negativeJson.uInt)
+        
+        let stringUInt = "121"
+        XCTAssertEqual(JSON(stringUInt).uInt, uInt)
+        
+        let double = 1.21
+        XCTAssertEqual(JSON(double).uInt, 1)
+        
+        XCTAssertNil(JSON().uInt)
+        XCTAssertNil(JSON([]).uInt)
+    }
+    
+    func testUIntExtension() throws {
+        let uInt: UInt = 121
+        XCTAssertEqual(try UInt.decode(JSON(uInt)), uInt)
+        
+        XCTAssertThrowsError(try UInt.decode(JSON()))
+    }
+    
+    func testUIntEquality() {
+        let uInt: UInt = 121
+        XCTAssertEqual(JSON(uInt), JSON(uInt))
+        XCTAssertNotEqual(JSON(uInt), JSON(101))
+    }
+    
+    func testFloatDecoding() {
+        let float: Float = 1.1
+        XCTAssertEqual(JSON(float).float, float)
+        
+        let stringFloat = "1.1"
+        XCTAssertEqual(JSON(stringFloat).float, float)
+        
+        XCTAssertNil(JSON().float)
+        XCTAssertNil(JSON([]).float)
+        
+        XCTAssertEqual(JSON(1).float, 1.0)
+    }
+    
+    func testFloatExtension() throws {
+        XCTAssertThrowsError(try Float.decode(JSON()))
+        
+        let float: Float = 1.1
+        XCTAssertEqual(try Float.decode(JSON(float)), float)
+    }
+    
+    func testFloatEquality() {
+        let float: Float = 1.1
+        XCTAssertEqual(JSON(float), JSON(float))
+        XCTAssertNotEqual(JSON(float), JSON(1.3))
+    }
+
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
         ("testIntEquality", testIntEquality),
+        ("testInt64Decoding", testInt64Decoding),
+        ("testInt64Extension", testInt64Extension),
+        ("testInt64Equality", testInt64Equality),
         ("testDoubleDecoding", testDoubleDecoding),
         ("testDoubleEquality", testDoubleEquality),
         ("testDoubleExtension", testDoubleExtension),
         ("testDoubleExtensionThrows", testDoubleExtensionThrows),
         ("testInvalidDoubleDecoding", testInvalidDoubleDecoding),
+        ("testUIntDecoding", testUIntDecoding),
+        ("testUIntExtension", testUIntExtension),
+        ("testUIntEquality", testUIntEquality),
+        ("testFloatDecoding", testFloatDecoding),
+        ("testFloatExtension", testFloatExtension),
+        ("testFloatEquality", testFloatEquality),
     ]
 }

@@ -14,7 +14,29 @@ extension JSON {
         case is String:
             let stringValue = object as? String
             if let stringValue = stringValue {
-                value = NSDecimalNumber(string: stringValue).intValue
+                value = Int(stringValue)
+            }
+        default:
+            break
+        }
+        
+        return value
+    }
+    
+    public var int64: Int64? {
+        guard let object = object else {
+            return nil
+        }
+        
+        var value: Int64? = nil
+        
+        switch object {
+        case is NSNumber:
+            value = (object as? NSNumber)?.int64Value
+        case is String:
+            let stringValue = object as? String
+            if let stringValue = stringValue {
+                value = Int64(stringValue)
             }
         default:
             break
