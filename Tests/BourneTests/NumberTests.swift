@@ -34,6 +34,17 @@ class NumberTests: XCTestCase {
         let stringOne = JSON("1")
         XCTAssertNotEqual(stringOne, one)
     }
+    
+    func testInt64Decoding() {
+        let int64 = Int64.max
+        XCTAssertEqual(JSON(int64).int64, int64)
+        
+        let stringInt64 = String(describing: int64)
+        XCTAssertEqual(JSON(stringInt64).int64, int64)
+        
+        XCTAssertNil(JSON().int64)
+        XCTAssertNil(JSON([]).int64)
+    }
 
     func testDoubleDecoding() {
         let double = 1.211
@@ -135,6 +146,7 @@ class NumberTests: XCTestCase {
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
         ("testIntEquality", testIntEquality),
+        ("testInt64Decoding", testInt64Decoding),
         ("testDoubleDecoding", testDoubleDecoding),
         ("testDoubleEquality", testDoubleEquality),
         ("testDoubleExtension", testDoubleExtension),
