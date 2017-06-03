@@ -89,6 +89,7 @@ class NumberTests: XCTestCase {
         XCTAssertEqual(JSON(double).uInt, 1)
         
         XCTAssertNil(JSON().uInt)
+        XCTAssertNil(JSON([]).uInt)
     }
     
     func testUIntExtension() throws {
