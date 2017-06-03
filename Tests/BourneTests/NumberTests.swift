@@ -72,6 +72,22 @@ class NumberTests: XCTestCase {
         XCTAssertEqual(double, 1.21)
     }
 
+    func testUIntDecoding() {
+        let uInt: UInt = 121
+        let uIntJson = JSON(uInt)
+
+        XCTAssertEqual(uIntJson.uInt, uInt)
+        
+        let negativeInt = -124
+        let negativeJson = JSON(negativeInt)
+        XCTAssertNil(negativeJson.uInt)
+        
+        let stringUInt = "121"
+        XCTAssertEqual(JSON(stringUInt).uInt, uInt)
+        
+        XCTAssertNil(JSON().uInt)
+    }
+
     static var allTests = [
         ("testIntExtensionDecoding", testIntExtensionDecoding),
         ("testIntExtensionThrowsError", testIntExtensionThrowsError),
