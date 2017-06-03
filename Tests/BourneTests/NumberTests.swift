@@ -85,6 +85,9 @@ class NumberTests: XCTestCase {
         let stringUInt = "121"
         XCTAssertEqual(JSON(stringUInt).uInt, uInt)
         
+        let double = 1.21
+        XCTAssertEqual(JSON(double).uInt, 1)
+        
         XCTAssertNil(JSON().uInt)
     }
 
