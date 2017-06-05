@@ -132,19 +132,19 @@
 /* Begin PBXFileReference section */
 		3E019E461EE24858005C29BE /* JSON+Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Float.swift"; path = "JSON/JSON+Float.swift"; sourceTree = "<group>"; };
 		4C68A7E81EE064E9002382EB /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
-		4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decodable+Foundation.swift"; sourceTree = "<group>"; };
+		4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Decodable+Foundation.swift"; path = "Decodable/Decodable+Foundation.swift"; sourceTree = "<group>"; };
 		4C68A7EF1EE0808A002382EB /* Dictionary+Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Pairs.swift"; sourceTree = "<group>"; };
 		4C68A7F11EE08E4C002382EB /* NumberTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTests.swift; sourceTree = "<group>"; };
-		4C68A7F61EE0ABFF002382EB /* JSON+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Bool.swift"; sourceTree = "<group>"; };
+		4C68A7F61EE0ABFF002382EB /* JSON+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Bool.swift"; path = "JSON/JSON+Bool.swift"; sourceTree = "<group>"; };
 		4C68A7F81EE0AD1D002382EB /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		4C68A8141EE0C247002382EB /* JSON+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Equatable.swift"; path = "JSON/JSON+Equatable.swift"; sourceTree = "<group>"; };
 		4C68A81C1EE0C2E3002382EB /* JSON+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+String.swift"; path = "JSON/JSON+String.swift"; sourceTree = "<group>"; };
 		4C68A8211EE0C348002382EB /* JSON+Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Int.swift"; path = "JSON/JSON+Int.swift"; sourceTree = "<group>"; };
-		4C731FA71ED4E6150047B818 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
+		4C731FA71ED4E6150047B818 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Decodable.swift; path = Decodable/Decodable.swift; sourceTree = "<group>"; };
 		4C731FA91ED4E64C0047B818 /* DecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodeError.swift; sourceTree = "<group>"; };
-		4C731FAB1ED4E6AD0047B818 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		4C731FAD1ED4E6C70047B818 /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONType.swift; sourceTree = "<group>"; };
-		4C731FAF1ED4E8620047B818 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
+		4C731FAB1ED4E6AD0047B818 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = JSON/JSON.swift; sourceTree = "<group>"; };
+		4C731FAD1ED4E6C70047B818 /* JSONType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONType.swift; path = JSON/JSONType.swift; sourceTree = "<group>"; };
+		4C731FAF1ED4E8620047B818 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONError.swift; path = JSON/JSONError.swift; sourceTree = "<group>"; };
 		4CD475501EE1B7ED001A71ED /* JSON+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Double.swift"; path = "JSON/JSON+Double.swift"; sourceTree = "<group>"; };
 		4CD475551EE1C0B4001A71ED /* JSON+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Array.swift"; path = "JSON/JSON+Array.swift"; sourceTree = "<group>"; };
 		4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
@@ -222,6 +222,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6351041EE59FF20070A56F /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				4C731FA71ED4E6150047B818 /* Decodable.swift */,
+				4C731FA91ED4E64C0047B818 /* DecodeError.swift */,
+				4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */,
+			);
+			name = Decodable;
+			sourceTree = "<group>";
+		};
 		4C731FB11ED4E88D0047B818 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,9 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* Bourne.swift */,
-				4C731FA71ED4E6150047B818 /* Decodable.swift */,
-				4C731FA91ED4E64C0047B818 /* DecodeError.swift */,
-				4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */,
+				4C6351041EE59FF20070A56F /* Decodable */,
 				4C731FB11ED4E88D0047B818 /* JSON */,
 				4C68A7EF1EE0808A002382EB /* Dictionary+Pairs.swift */,
 			);
