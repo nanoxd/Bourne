@@ -222,6 +222,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6351041EE59FF20070A56F /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				4C731FA71ED4E6150047B818 /* Decodable.swift */,
+				4C731FA91ED4E64C0047B818 /* DecodeError.swift */,
+				4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */,
+			);
+			name = Decodable;
+			sourceTree = "<group>";
+		};
 		4C731FB11ED4E88D0047B818 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,9 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				8933C7841EB5B820000D00A4 /* Bourne.swift */,
-				4C731FA71ED4E6150047B818 /* Decodable.swift */,
-				4C731FA91ED4E64C0047B818 /* DecodeError.swift */,
-				4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */,
+				4C6351041EE59FF20070A56F /* Decodable */,
 				4C731FB11ED4E88D0047B818 /* JSON */,
 				4C68A7EF1EE0808A002382EB /* Dictionary+Pairs.swift */,
 			);
