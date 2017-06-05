@@ -90,6 +90,7 @@ class BourneTests: XCTestCase {
         let json = JSON(dict)
 
         XCTAssertEqual(json.value(for: "this.key")?.string, "path")
+        XCTAssertNil(json.value(for: "this.not.a.key"))
     }
     
     static var allTests = [
