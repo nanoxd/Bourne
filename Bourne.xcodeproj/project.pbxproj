@@ -135,7 +135,7 @@
 		4C68A7ED1EE0666E002382EB /* Decodable+Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Decodable+Foundation.swift"; sourceTree = "<group>"; };
 		4C68A7EF1EE0808A002382EB /* Dictionary+Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Pairs.swift"; sourceTree = "<group>"; };
 		4C68A7F11EE08E4C002382EB /* NumberTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTests.swift; sourceTree = "<group>"; };
-		4C68A7F61EE0ABFF002382EB /* JSON+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Bool.swift"; sourceTree = "<group>"; };
+		4C68A7F61EE0ABFF002382EB /* JSON+Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Bool.swift"; path = "JSON/JSON+Bool.swift"; sourceTree = "<group>"; };
 		4C68A7F81EE0AD1D002382EB /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		4C68A8141EE0C247002382EB /* JSON+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Equatable.swift"; path = "JSON/JSON+Equatable.swift"; sourceTree = "<group>"; };
 		4C68A81C1EE0C2E3002382EB /* JSON+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+String.swift"; path = "JSON/JSON+String.swift"; sourceTree = "<group>"; };
