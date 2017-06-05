@@ -128,6 +128,39 @@ class NumberTests: XCTestCase {
         XCTAssertEqual(JSON(uInt), JSON(uInt))
         XCTAssertNotEqual(JSON(uInt), JSON(101))
     }
+
+    func testUInt64Decoding() {
+        let uInt = UInt64.max
+        let uIntJson = JSON(uInt)
+
+        XCTAssertEqual(uIntJson.uInt64, uInt)
+
+        let negativeInt = -124
+        let negativeJson = JSON(negativeInt)
+        XCTAssertNil(negativeJson.uInt64)
+
+        let stringUInt = String(describing: uInt)
+        XCTAssertEqual(JSON(stringUInt).uInt64, uInt)
+        
+        let double = 1.21
+        XCTAssertEqual(JSON(double).uInt64, 1)
+        
+        XCTAssertNil(JSON().uInt64)
+        XCTAssertNil(JSON([]).uInt64)
+    }
+
+    func testUInt64Extension() throws {
+        let uInt = UInt64.max
+        XCTAssertEqual(try UInt64.decode(JSON(uInt)), uInt)
+        
+        XCTAssertThrowsError(try UInt.decode(JSON()))
+    }
+
+    func testUInt64Equality() {
+        let uInt: UInt64 = UInt64.max
+        XCTAssertEqual(JSON(uInt), JSON(uInt))
+        XCTAssertNotEqual(JSON(uInt), JSON(101))
+    }
     
     func testFloatDecoding() {
         let float: Float = 1.1
@@ -170,6 +203,9 @@ class NumberTests: XCTestCase {
         ("testUIntDecoding", testUIntDecoding),
         ("testUIntExtension", testUIntExtension),
         ("testUIntEquality", testUIntEquality),
+        ("testUInt64Decoding", testUInt64Decoding),
+        ("testUInt64Extension", testUInt64Extension),
+        ("testUInt64Equality", testUInt64Equality),
         ("testFloatDecoding", testFloatDecoding),
         ("testFloatExtension", testFloatExtension),
         ("testFloatEquality", testFloatEquality),
