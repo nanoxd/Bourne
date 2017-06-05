@@ -80,6 +80,17 @@ class BourneTests: XCTestCase {
 
         XCTAssertNotEqual(json, otherJson)
     }
+
+    func testKeyPathSupport() {
+        let dict: [String: Any] = [
+            "an": "item",
+            "this": ["key": "path"]
+        ]
+
+        let json = JSON(dict)
+
+        XCTAssertEqual(json.value(for: "this.key")?.string, "path")
+    }
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
