@@ -149,6 +149,13 @@ class NumberTests: XCTestCase {
         XCTAssertNil(JSON([]).uInt64)
     }
 
+    func testUInt64Extension() throws {
+        let uInt = UInt64.max
+        XCTAssertEqual(try UInt64.decode(JSON(uInt)), uInt)
+        
+        XCTAssertThrowsError(try UInt.decode(JSON()))
+    }
+
     func testUInt64Equality() {
         let uInt: UInt64 = UInt64.max
         XCTAssertEqual(JSON(uInt), JSON(uInt))
@@ -197,6 +204,7 @@ class NumberTests: XCTestCase {
         ("testUIntExtension", testUIntExtension),
         ("testUIntEquality", testUIntEquality),
         ("testUInt64Decoding", testUInt64Decoding),
+        ("testUInt64Extension", testUInt64Extension),
         ("testUInt64Equality", testUInt64Equality),
         ("testFloatDecoding", testFloatDecoding),
         ("testFloatExtension", testFloatExtension),
