@@ -33,18 +33,30 @@ class DecodableTests: XCTestCase {
         "nestedKey": ["is": "here"]
     ]
 
-    func testDecodingFromJSON() throws {
-        let json = JSON(dict)
+    var json: JSON!
+    var model: SimpleModel?
 
-        let model = try SimpleModel.decode(json)
-        XCTAssertEqual(model.key, dict["key"] as! String)
-        XCTAssertEqual(model.number, dict["number"] as! Int)
-        XCTAssertEqual(model.bool, dict["bool"] as! Bool)
-        XCTAssertEqual(model.nestedKey, "here")
-        XCTAssertEqual(model.defaultItem, "Default")
+    override func setUp() {
+        json = JSON(dict)
+
+        model = try? SimpleModel.decode(json)
+    }
+
+    func testDecodingModel() {
+        XCTAssertEqual(model?.key, dict["key"] as? String)
+        XCTAssertEqual(model?.number, dict["number"] as? Int)
+        XCTAssertEqual(model?.bool, dict["bool"] as? Bool)
+        XCTAssertEqual(model?.defaultItem, "Default")
+        XCTAssertEqual(model?.nestedKey, "here")
+    }
+
+    func testDecodingNestedKeys() throws {
+        let nestedKey: String = try json.decode("nestedKey.is")
+        XCTAssertEqual(nestedKey, "here")
     }
 
     static var allTests = [
-        ("testDecodingFromJSON", testDecodingFromJSON)
+        ("testDecodingModel", testDecodingModel),
+        ("testDecodingNestedKey", testDecodingNestedKeys),
     ]
 }
