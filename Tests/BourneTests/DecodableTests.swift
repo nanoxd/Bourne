@@ -50,6 +50,12 @@ class DecodableTests: XCTestCase {
         XCTAssertEqual(model?.nestedKey, "here")
     }
 
+    func testDecodingWithDefaultValue() throws {
+        let invalidKey: Int = try json.decode("invalidKey", or: 1)
+
+        XCTAssertEqual(invalidKey, 1)
+    }
+
     func testDecodingNestedKeys() throws {
         let nestedKey: String = try json.decode("nestedKey.is")
         XCTAssertEqual(nestedKey, "here")
@@ -57,6 +63,7 @@ class DecodableTests: XCTestCase {
 
     static var allTests = [
         ("testDecodingModel", testDecodingModel),
+        ("testDecodingWithDefaultValue", testDecodingWithDefaultValue),
         ("testDecodingNestedKey", testDecodingNestedKeys),
     ]
 }
