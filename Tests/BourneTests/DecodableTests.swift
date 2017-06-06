@@ -33,7 +33,9 @@ class DecodableTests: XCTestCase {
         "number": 1024,
         "bool": false,
         "nestedKey": ["is": "here"],
-        "numbers": [1, 2, 3]
+        "numbers": [1, 2, 3],
+        "person": ["name": "Alfred", "age": 18],
+        "queue": ["Alfred": 1, "Maria": 2, "Jose": 3, "Consuelo": 4]
     ]
 
     var json: JSON!
@@ -62,6 +64,10 @@ class DecodableTests: XCTestCase {
         let invalidArray: [String] = try json.decode("invalidArray", or: ["one"])
         XCTAssertEqual(invalidArray, ["one"])
         XCTAssertEqual(invalidArray.count, 1)
+
+        let invalidDictionary: [String: Bool] = try json.decode("invalidDict", or: ["yes": true, "no": false])
+        XCTAssertEqual(invalidDictionary.count, 2)
+        XCTAssertEqual(invalidDictionary, ["yes": true, "no": false])
     }
 
     func testDecodingNestedKeys() throws {
@@ -73,6 +79,13 @@ class DecodableTests: XCTestCase {
         let numbers: [Int] = try json.decode("numbers")
         XCTAssertEqual(numbers, [1, 2, 3])
         XCTAssertEqual(numbers.count, 3)
+    }
+
+    func testDecodingDictionary() throws {
+        let queue: [String: Int] = try json.decode("queue")
+
+        XCTAssertEqual(queue.count, 4)
+        XCTAssertEqual(queue["Alfred"], 1)
     }
 
     static var allTests = [
