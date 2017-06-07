@@ -25,6 +25,9 @@ class BourneTests: XCTestCase {
 
         let emptyDataJSON = JSON(data: nil)
         XCTAssertNil(emptyDataJSON)
+
+        let invalidData = "people".data(using: .utf8)
+        XCTAssertNil(JSON(data: invalidData))
     }
 
     func testFileManagerInitializer() {
