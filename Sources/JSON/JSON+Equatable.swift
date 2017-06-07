@@ -27,7 +27,7 @@ public func ==(lhs: JSON, rhs: JSON) -> Bool {
     case (let left as [Any], let right as [Any]):
         return left.map { JSON($0) } == right.map { JSON ($0) }
     case (let left as [String : Any], let right as [String : Any]):
-        return Dictionary(left.map { ($0, JSON($1)) }) == Dictionary(right.map { ($0, JSON($1)) })
+        return Dictionary(left.map { ($0.0, JSON($0.1)) }) == Dictionary(right.map { ($0.0, JSON($0.1)) })
         
     default: return false
     }

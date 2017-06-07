@@ -9,7 +9,7 @@ extension JSON {
     /// - Returns: The `Decodable` type
     /// - Throws: A DecodeError iff the key is empty and defaultValue is not defined
     func decode<T: Decodable>(_ key: String, or defaultValue: T? = nil) throws -> T {
-        guard let value = try? T.decode(self[key]) else {
+        guard let value = try? T.decode(self[key]!) else {
             if let defaultValue = defaultValue {
                 return defaultValue
             } else {

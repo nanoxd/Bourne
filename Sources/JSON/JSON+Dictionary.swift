@@ -6,7 +6,7 @@ extension JSON {
             return nil
         }
         
-        return Dictionary(dictionary.map { ($0, JSON($1)) })
+        return Dictionary(dictionary.map { ($0.0, JSON($0.1)) })
     }
     
     public var dictionaryValue: [String: JSON] {
