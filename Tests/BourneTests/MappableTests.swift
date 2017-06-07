@@ -16,12 +16,12 @@ struct SimpleModel: Bourne.Mappable {
 
     static func decode(_ j: JSON) throws -> SimpleModel {
         return SimpleModel(
-            key: try j.decode("key"),
-            number: try j.decode("number"),
-            bool: try j.decode("bool"),
-            nestedKey: try j.decode("nestedKey.is"),
-            defaultItem: try j.decode("invalidKey", or: "Default"),
-            numbers: try j.decode("numbers")
+            key: try j.from("key"),
+            number: try j.from("number"),
+            bool: try j.from("bool"),
+            nestedKey: try j.from("nestedKey.is"),
+            defaultItem: try j.from("invalidKey", or: "Default"),
+            numbers: try j.from("numbers")
         )
     }
 }
@@ -56,32 +56,32 @@ class DecodableTests: XCTestCase {
     }
 
     func testDecodingWithDefaultValue() throws {
-        let invalidKey: Int = try json.decode("invalidKey", or: 1)
+        let invalidKey: Int = try json.from("invalidKey", or: 1)
 
         XCTAssertEqual(invalidKey, 1)
 
-        let invalidArray: [String] = try json.decode("invalidArray", or: ["one"])
+        let invalidArray: [String] = try json.from("invalidArray", or: ["one"])
         XCTAssertEqual(invalidArray, ["one"])
         XCTAssertEqual(invalidArray.count, 1)
 
-        let invalidDictionary: [String: Bool] = try json.decode("invalidDict", or: ["yes": true, "no": false])
+        let invalidDictionary: [String: Bool] = try json.from("invalidDict", or: ["yes": true, "no": false])
         XCTAssertEqual(invalidDictionary.count, 2)
         XCTAssertEqual(invalidDictionary, ["yes": true, "no": false])
     }
 
     func testDecodingNestedKeys() throws {
-        let nestedKey: String = try json.decode("nestedKey.is")
+        let nestedKey: String = try json.from("nestedKey.is")
         XCTAssertEqual(nestedKey, "here")
     }
 
     func testDecodingArray() throws {
-        let numbers: [Int] = try json.decode("numbers")
+        let numbers: [Int] = try json.from("numbers")
         XCTAssertEqual(numbers, [1, 2, 3])
         XCTAssertEqual(numbers.count, 3)
     }
 
     func testDecodingDictionary() throws {
-        let queue: [String: Int] = try json.decode("queue")
+        let queue: [String: Int] = try json.from("queue")
 
         XCTAssertEqual(queue.count, 4)
         XCTAssertEqual(queue["Alfred"], 1)
