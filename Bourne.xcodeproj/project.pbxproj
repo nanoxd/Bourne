@@ -139,6 +139,7 @@
 		4C68A8211EE0C348002382EB /* JSON+Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Int.swift"; path = "JSON/JSON+Int.swift"; sourceTree = "<group>"; };
 		4C731FA71ED4E6150047B818 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Decodable/Mappable.swift; sourceTree = "<group>"; };
 		4C731FAB1ED4E6AD0047B818 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = JSON/JSON.swift; sourceTree = "<group>"; };
+		4CC5E6851EE870F80000A45A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4CD475501EE1B7ED001A71ED /* JSON+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Double.swift"; path = "JSON/JSON+Double.swift"; sourceTree = "<group>"; };
 		4CD475551EE1C0B4001A71ED /* JSON+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "JSON+Array.swift"; path = "JSON/JSON+Array.swift"; sourceTree = "<group>"; };
 		4CD4755A1EE1C13D001A71ED /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				4CC5E6851EE870F80000A45A /* README.md */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
