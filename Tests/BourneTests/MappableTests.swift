@@ -6,7 +6,7 @@ enum TestError: Error {
     case invalidJSON
 }
 
-struct SimpleModel: Decodable {
+struct SimpleModel: Bourne.Mappable {
     let key: String
     let number: Int
     let bool: Bool
@@ -14,8 +14,7 @@ struct SimpleModel: Decodable {
     let defaultItem: String
     let numbers: [Int]
 
-    static func decode(_ j: JSON?) throws -> SimpleModel {
-        guard let j = j else { throw TestError.invalidJSON }
+    static func decode(_ j: JSON) throws -> SimpleModel {
         return SimpleModel(
             key: try j.decode("key"),
             number: try j.decode("number"),
