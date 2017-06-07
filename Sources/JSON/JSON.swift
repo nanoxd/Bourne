@@ -79,17 +79,26 @@ public struct JSON {
         }
 
         get {
-            /**
-             NSDictionary is used because it currently performs better than a native Swift dictionary.
-             The reason for this is that [String : AnyObject] is bridged to NSDictionary deep down the
-             call stack, and this bridging operation is relatively expensive. Until Swift is ABI stable
-             and/or doesn't require a bridge to Objective-C, NSDictionary will be used here
-             */
-            guard let dictionary = object as? NSDictionary, let value = dictionary[key] else {
-                return nil
-            }
-            
-            return JSON(value)
+            return value(for: key)
         }
+    }
+
+
+    /// Retrieve a value from a given keyPath
+    ///
+    /// - Parameter keyPath: A keyPath to where an item could be
+    /// - Returns: Iff an object is found, it will be boxed up in JSON
+    public func value(for keyPath: String) -> JSON? {
+        /**
+         NSDictionary is used because it currently performs better than a native Swift dictionary.
+         The reason for this is that [String : AnyObject] is bridged to NSDictionary deep down the
+         call stack, and this bridging operation is relatively expensive. Until Swift is ABI stable
+         and/or doesn't require a bridge to Objective-C, NSDictionary will be used here
+         */
+        guard let dictionary = object as? NSDictionary, let value = dictionary.value(forKeyPath: keyPath) else {
+            return nil
+        }
+
+        return JSON(value)
     }
 }
