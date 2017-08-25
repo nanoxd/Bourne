@@ -1,6 +1,16 @@
 import Foundation
 
 public struct JSON {
+    private enum Node {
+        case number
+        case string
+        case bool
+        case array
+        case dictionary
+        case null
+        case unknown
+    }
+
     public var object: Any?
 
     public init() {
@@ -101,4 +111,45 @@ public struct JSON {
 
         return JSON(value)
     }
+
+    public var rawString: String {
+        guard let object = object else {
+            return ""
+        }
+
+        switch type {
+        case .array, .dictionary:
+            guard let data = try? JSONSerialization.data(withJSONObject: object, options: .prettyPrinted) else {
+                return ""
+            }
+
+            return String(data: data, encoding: String.Encoding.utf8) ?? ""
+        default:
+            return object as? String ?? ""
+        }
+    }
+
+    private var type: Node {
+        guard let object = object else {
+            return .unknown
+        }
+
+        switch object {
+        case is String:
+            return .string
+        case is NSArray:
+            return .array
+        case is NSDictionary:
+            return .dictionary
+        case is Int, is Float, is Double:
+            return .number
+        case is Bool:
+            return .bool
+        case is NSNull:
+            return .null
+        default:
+            return .unknown
+        }
+    }
 }
+
