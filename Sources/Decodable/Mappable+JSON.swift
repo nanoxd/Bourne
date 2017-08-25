@@ -1,6 +1,6 @@
 import Foundation
 
-extension JSON {
+public extension JSON {
     /// Decodes any `Mappable` type into itself or a default value
     ///
     /// - Parameters:
@@ -8,7 +8,7 @@ extension JSON {
     ///   - defaultValue: Value to default to when key is not present
     /// - Returns: The `Mappable` type
     /// - Throws: A DecodeError iff the key is empty and defaultValue is not defined
-    func from<T: Mappable>(_ key: String, or defaultValue: T? = nil) throws -> T {
+    public func from<T: Mappable>(_ key: String, or defaultValue: T? = nil) throws -> T {
         guard let json = self[key], let value = try? T.decode(json) else {
             if let defaultValue = defaultValue {
                 return defaultValue
@@ -27,7 +27,7 @@ extension JSON {
     ///   - defaultValues: Value to default to when key is not present
     /// - Returns: An array of `Mappable` types
     /// - Throws: A DecodeError iff the key is empty and defaultValue is not defined
-    func from<T: Mappable>(_ key: String, or defaultValues: [T]? = nil) throws -> [T] {
+    public func from<T: Mappable>(_ key: String, or defaultValues: [T]? = nil) throws -> [T] {
         guard let array = self[key]?.array else {
             if let defaultValues = defaultValues {
                 return defaultValues
@@ -52,7 +52,7 @@ extension JSON {
     ///   - defaultValue: Value to default to when key is not present
     /// - Returns: A dictionary of  `String: Decodable` types
     /// - Throws: A DecodeError iff the key is empty and defaultValue is not defined
-    func from<Value: Mappable>(_ key: String, or defaultValue: [String: Value]? = nil) throws -> [String: Value] {
+    public func from<Value: Mappable>(_ key: String, or defaultValue: [String: Value]? = nil) throws -> [String: Value] {
         var dict = [String: Value]()
 
         guard let value = self[key], let dictionary = value.dictionary else {
