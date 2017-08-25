@@ -15,3 +15,11 @@ extension JSON {
         return array ?? []
     }
 }
+
+// MARK: - ArrayLiteralConvertible
+extension JSON: ExpressibleByArrayLiteral {
+    public init(arrayLiteral elements: Any...) {
+        self.init(elements)
+    }
+}
+

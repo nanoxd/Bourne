@@ -13,3 +13,17 @@ extension JSON {
         return dictionary ?? [:]
     }
 }
+
+// MARK: - DictionaryLiteralConvertible
+
+extension JSON: ExpressibleByDictionaryLiteral {
+    public init(dictionaryLiteral elements: (String, Any)...) {
+        var object: [String : Any] = [:]
+
+        for (key, value) in elements {
+            object[key] = value
+        }
+
+        self.init(object)
+    }
+}
