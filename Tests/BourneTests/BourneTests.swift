@@ -95,6 +95,17 @@ class BourneTests: XCTestCase {
         XCTAssertEqual(json.value(for: "this.key")?.string, "path")
         XCTAssertNil(json.value(for: "this.not.a.key"))
     }
+
+    func testRawString() {
+        let json = JSON()
+        XCTAssertEqual(json.rawString, "")
+
+        let arrayJson = JSON(["key", "value"])
+        XCTAssertEqual(arrayJson.rawString, "[\n  \"key\",\n  \"value\"\n]")
+
+        let dictJson = JSON(["k": "v"])
+        XCTAssertEqual(dictJson.rawString, "{\n  \"k\" : \"v\"\n}")
+    }
     
     static var allTests = [
         ("testEmptyInitializer", testEmptyInitializer),
