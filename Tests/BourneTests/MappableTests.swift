@@ -6,7 +6,7 @@ enum TestError: Error {
     case invalidJSON
 }
 
-struct SimpleModel: Bourne.Mappable {
+struct SimpleModel: Mappable {
     let key: String
     let number: Int
     let bool: Bool
