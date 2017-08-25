@@ -31,8 +31,8 @@ public struct JSON {
         do {
             let object: Any = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
             self.object = object
-        } catch let error as NSError {
-            debugPrint(error)
+        } catch {
+            return nil
         }
     }
 

@@ -21,7 +21,7 @@ class StringExtensionTests: XCTestCase {
         let json = JSON(nestedString)
         XCTAssertEqual(json["hey"]?.string, nestedString["hey"])
 
-        XCTAssertEqual(try String.decode(json["hey"]), nestedString["hey"])
+        XCTAssertEqual(try String.decode(json["hey"]!), nestedString["hey"])
     }
 
     func testStringDecodingNumbers() {
