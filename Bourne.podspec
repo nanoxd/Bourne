@@ -3,12 +3,12 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "A JSON parser"
   s.description  = <<-DESC
-    A faster JSON parser that relies on NSDictionary
+    A faster JSON parser.
   DESC
   s.homepage     = "https://github.com/nanoxd/Bourne"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Fernando Paredes" => "nano@fdp.io" }
-  s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/nanoxd"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
