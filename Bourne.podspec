@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.0.0"
   s.summary      = "A JSON parser"
   s.description  = <<-DESC
-    Your description here.
+    A faster JSON parser that relies on NSDictionary
   DESC
   s.homepage     = "https://github.com/nanoxd/Bourne"
   s.license      = { :type => "MIT", :file => "LICENSE" }
